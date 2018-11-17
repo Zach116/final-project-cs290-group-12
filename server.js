@@ -10,7 +10,7 @@ app.get("*", function (req, res, next) {
 
 //Set the server to listen on the appropriate PORT
 if (process.env.PORT) {
-  server.listen(process.env.PORT, function(err) {
+  app.listen(process.env.PORT, function(err) {
     if (err) {
       throw err;
     }
@@ -18,7 +18,7 @@ if (process.env.PORT) {
   });
 }
 else {
-  server.listen(3000, function(err) {
+  app.listen(3000, function(err) {
     if (err) {
       throw err;
     }
