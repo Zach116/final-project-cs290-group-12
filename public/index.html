@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="index.js" charset="utf-8" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="site-title"><a href="#">Benny's Chat</a></h1>
+    </header>
+    <main class="content">
+      <aside class="channels">
+        <button id="channel-button" class="action-button"><!--channel name--></button>
+        <!--channel buttons; use handlebars template so we can add new ones-->
+      </aside>
+      <section id="messages">
+        <div class="chat-bubble">
+          <!--message-->
+        </div>
+        <!--channel buttons; use handlebars template-->
+      </section>
+      <section id="send-messages">
+        <div class="text-input-container">
+          <input type="text" id="text-input" class="text-box">
+          <button id="send-button" class="action-button">Send</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
