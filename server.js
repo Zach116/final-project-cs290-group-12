@@ -1,7 +1,16 @@
+var path = require('path');
 var express = require('express');
 var app = express();
+var exphbs = require('express-handlebars');
+
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 
 app.use(express.static('public'));
+
+app.get('/', function (req, res, next) {
+  res.status(200).render('index');
+});
 
 //If file not found send 404 page
 app.get("*", function (req, res, next) {
