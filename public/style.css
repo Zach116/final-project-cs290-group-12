@@ -42,18 +42,21 @@ header {
 }
 
 .text-input-container{
+  display: inline-flex;
   background-color: #685D79;
   height: 100%;
+  width: 100%;
 }
 
 #text-input {
   margin: 13px;
-  width: 80%;
+  width: 85%;
   height: 50px;
 }
 
 #send-button {
   width: 60px;
   height: 50px;
-  margin: 13px;
+  margin-top: 16px;
+  margin-left: 4px;
 }
