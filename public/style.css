@@ -26,7 +26,23 @@ header {
 }
 
 .content {
+  height: 100px;
+  width: 100%;
+}
+
+#messages {
+  background-color: #685D79;
+  height: 300px;
+  width: 100%;
+}
+
+#send-messages {
   background-color: #475C7A;
-  height: 400px;
+  height: 100%;
+  width: 100%;
+}
+
+.text-input-container{
+  height: 100%;
   width: 100%;
 }
