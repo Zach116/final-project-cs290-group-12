@@ -5,7 +5,6 @@ darker red: #AB6C82
 purply-red: #685D79
 blue-black: #475C7A */
 
-
 header {
    display: flex;
    background-color: #AB6C82;
@@ -26,7 +25,7 @@ header {
 }
 
 .content {
-  height: 100px;
+  height: 100%;
   width: 100%;
 }
 
@@ -37,12 +36,19 @@ header {
 }
 
 #send-messages {
-  background-color: #475C7A;
-  height: 100%;
-  width: 100%;
+  background-color: #685D79;
+  padding: 15px;
 }
 
 .text-input-container{
-  height: 100%;
-  width: 100%;
+  background-color: #475C7A;
+  padding: 15px;
+}
+
+#text-input {
+  margin: 8px;
+}
+
+#send-button {
+  margin: 8px;
 }
