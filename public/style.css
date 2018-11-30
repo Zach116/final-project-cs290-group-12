@@ -7,7 +7,7 @@ blue-black: #475C7A */
 
 header {
    display: flex;
-   background-color: #AB6C82;
+   background-color: #5a5e64;
    height: 160px;
  }
 
@@ -30,25 +30,29 @@ header {
 }
 
 #messages {
-  background-color: #685D79;
+  background-color: #475C7A;
   height: 300px;
   width: 100%;
 }
 
 #send-messages {
-  background-color: #685D79;
+  background-color: #475C7A;
   padding: 15px;
 }
 
 .text-input-container{
-  background-color: #475C7A;
+  background-color: #685D79;
   padding: 15px;
 }
 
 #text-input {
   margin: 8px;
+  width: 85%;
+  height: 50px;
 }
 
 #send-button {
-  margin: 8px;
+  width: 60px;
+  height: 50px;
+  margin-left: 13px;
 }
