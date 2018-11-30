@@ -38,21 +38,22 @@ header {
 #send-messages {
   background-color: #475C7A;
   padding: 15px;
+  height: 83px;
 }
 
 .text-input-container{
   background-color: #685D79;
-  padding: 15px;
+  height: 100%;
 }
 
 #text-input {
-  margin: 8px;
-  width: 85%;
+  margin: 13px;
+  width: 80%;
   height: 50px;
 }
 
 #send-button {
   width: 60px;
   height: 50px;
-  margin-left: 13px;
+  margin: 13px;
 }
