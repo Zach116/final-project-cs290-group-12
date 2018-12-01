@@ -42,7 +42,7 @@ app.get('/', function (req, res, next) {
 
 //handle adding posts to db
 app.post('/message/addMessage', function (req, res, next) {
-  if (req.body && req.body.user && req.body.message) {
+  if (req.body && req.body.message) {
     var allMessages = mongoDB.collection('messages');
     allMessages.insertOne({
       user: req.body.user,

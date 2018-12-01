@@ -11,10 +11,10 @@ sendButton.addEventListener('click', function(event) {
     var reuqestBody = JSON.stringify({
       message: textBoxContent
     });
+    console.log("sent message");
 
     postRequest.addEventListener('load', function (even) {
       if (event.target.status === 200) {
-        console.log("sent message");
         sendMessage(textBoxContent);
         textBox.value = "";
       }
