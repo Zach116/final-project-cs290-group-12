@@ -11,13 +11,16 @@ sendButton.addEventListener('click', function(event) {
     var requestBody = JSON.stringify({
       message: textBoxContent
     });
-    console.log("sent message");
 
-    postRequest.addEventListener('load', function (even) {
-      console.log("printing message");
+    console.log("sent message:", requestBody);
+
+    postRequest.addEventListener('load', function (event) {
+      console.log("incoming status:", event.target.status);
       if (event.target.status === 200) {
         sendMessage(textBoxContent);
         textBox.value = "";
+      } else {
+        alert("Error storing message: " + event.target.response);
       }
     });
 

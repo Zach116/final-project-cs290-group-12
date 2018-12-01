@@ -24,6 +24,9 @@ var port = process.env.PORT || 3000;
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
+//bodyParser setup
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
 //==Handle incoming requests
 app.use(express.static('public'));
@@ -43,6 +46,7 @@ app.get('/', function (req, res, next) {
 //handle adding posts to db
 app.post('/message/addMessage', function (req, res, next) {
   console.log("got message request");
+  console.log("req.body:", req.body);
   if (req.body && req.body.message) {
     var allMessages = mongoDB.collection('messages');
     allMessages.insertOne({
@@ -50,10 +54,8 @@ app.post('/message/addMessage', function (req, res, next) {
     }, function (err, result) {
       if (err) {
         res.status(500).send("Error saving message to DB");
-      } else if (result.matchedCount > 0) {
-        res.status(200).send("Successfully saved post in DB");
       } else {
-        next();
+        res.status(200).send("Successfully saved post in DB");
       }
     });
   } else {
