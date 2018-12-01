@@ -42,6 +42,7 @@ app.get('/', function (req, res, next) {
 
 //handle adding posts to db
 app.post('/message/addMessage', function (req, res, next) {
+  console.log("got message request");
   if (req.body && req.body.message) {
     var allMessages = mongoDB.collection('messages');
     allMessages.insertOne({

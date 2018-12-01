@@ -14,6 +14,7 @@ sendButton.addEventListener('click', function(event) {
     console.log("sent message");
 
     postRequest.addEventListener('load', function (even) {
+      console.log("printing message");
       if (event.target.status === 200) {
         sendMessage(textBoxContent);
         textBox.value = "";
