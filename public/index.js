@@ -1,15 +1,17 @@
 var textBox =  document.getElementById("text-input");
 
 var sendButton = document.getElementById("send-button");
-sendButton.addEventListener(click, function {
-  var textBoxContent = textInput.value;
+sendButton.addEventListener('click', function(event) {
+  var textBoxContent = textBox.value;
   if (textBoxContent !== "") {
+    console.log("sent message");
     sendMessage(textBoxContent);
+    textBox.value = "";
   }
 });
 
 function sendMessage(message) {
-  var postContext = {
+  var messageContext = {
     "message": message
   }
 
