@@ -1,9 +1,10 @@
 var textBox =  document.getElementById("text-input");
 
 var sendButton = document.getElementById("send-button");
-sendButton.addEventListener(click, function {
+sendButton.addEventListener(click, function() {
   var textBoxContent = textInput.value;
   if (textBoxContent !== "") {
+    console.log("sent message");
     sendMessage(textBoxContent);
   }
 });
