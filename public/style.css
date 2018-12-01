@@ -7,20 +7,25 @@ blue-black: #475C7A */
 
 header {
    display: flex;
-   background-color: #5a5e64;
-   height: 130px;
+   background-color: #FCBB6D;
+   height: 17vh;
+ }
+
+ body {
+   background-color: #475C7A;
+   height: 75vh;
  }
 
  .site-title a{
-   font-family: Roboto Slab;
+   font-family: 'Montserrat', sans-serif;
    font-size: 60px;
-   font-weight: 100;
-   color: #FCBB6D;
+   font-weight: bold;
+   color: #D8737F;
    text-decoration: none;
 }
 
 .site-title {
-  margin-top: 40px;
+  margin-top: 30px;
   margin-left: 18px;
 }
 
@@ -34,15 +39,19 @@ body {
 }
 
 #messages {
-  background-color: #475C7A;
-  height: 300px;
+  height: 85%;
+  padding: 20px 0 10px 0;
+}
+
+.message-container {
+  background-color: #685D79;
+  height: 100%;
   width: 100%;
 }
 
 #send-messages {
-  background-color: #475C7A;
-  padding: 15px;
-  height: 83px;
+  height: 15%;
+  padding: 10px 0 20px 0;
 }
 
 .text-input-container{
@@ -55,13 +64,13 @@ body {
 #text-input {
   margin: 13px;
   width: 85%;
-  height: 50px;
+  height: 25px;
 }
 
 #send-button,
 #change-username-button {
   width: 60px;
-  height: 50px;
+  height: 25px;
   margin-top: 16px;
   margin-left: 4px;
 }
