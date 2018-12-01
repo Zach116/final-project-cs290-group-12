@@ -16,7 +16,7 @@ function sendMessage(message) {
   }
 
   var messageHTML = Handlebars.templates.messageBubble(messageContext);
-  var messageContainer = document.getElementById("messages");
+  var messageContainer = document.getElementById("messages"); 
 
   messageContainer.insertAdjacentHTML('beforeend', messageHTML);
 }
