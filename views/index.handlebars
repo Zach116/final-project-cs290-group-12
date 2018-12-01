@@ -1,6 +1,9 @@
 <main class="content">
   <section id="messages">
     <!--messages-->
+    {{#each messages}}
+      {{> messageBubble}}
+    {{/each}}
   </section>
 
   <section id="send-messages">

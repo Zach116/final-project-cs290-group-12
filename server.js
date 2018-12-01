@@ -29,7 +29,15 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
 app.get('/', function (req, res, next) {
-  res.status(200).render('index');
+  var allMessages = mongoDB.collection('messages');
+  allMessages.find({}).toArray(function (err, messageDocs) {
+    if (err) {
+      res.status(500).send("Could not read data and store in array");
+    }
+    res.status(200).render('index', {
+      messages: messageDocs
+    });
+  });
 });
 
 //handle adding posts to db
