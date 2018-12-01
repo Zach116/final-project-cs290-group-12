@@ -8,18 +8,21 @@ sendButton.addEventListener('click', function(event) {
     var requestURL = '/message/addMessage';
     postRequest.open('POST', requestURL);
 
-    var reuqestBody = JSON.stringify({
+    var requestBody = JSON.stringify({
       message: textBoxContent
     });
     console.log("sent message");
 
     postRequest.addEventListener('load', function (even) {
+      console.log("printing message");
       if (event.target.status === 200) {
         sendMessage(textBoxContent);
         textBox.value = "";
       }
     });
 
+    postRequest.setRequestHeader('Content-Type', 'application/json');
+    postRequest.send(requestBody);
   }
 });
 
