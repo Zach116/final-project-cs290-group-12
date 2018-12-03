@@ -31,6 +31,7 @@ sendButton.addEventListener('click', function(event) {
 
 function sendMessage(message) {
   var messageContext = {
+    "username": username,
     "message": message
   }
 
