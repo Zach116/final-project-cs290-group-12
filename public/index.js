@@ -1,5 +1,6 @@
 var textBox =  document.getElementById("text-input");
 var socket = io();
+var username = "Guest";
 
 var sendButton = document.getElementById("send-button");
 sendButton.addEventListener('click', function(event) {
@@ -34,7 +35,7 @@ function sendMessage(message) {
   }
 
   var messageHTML = Handlebars.templates.messageBubble(messageContext);
-  var messageContainer = document.getElementById("messages"); 
+  var messageContainer = document.getElementById("messages");
 
   messageContainer.insertAdjacentHTML('beforeend', messageHTML);
 }
@@ -44,3 +45,45 @@ socket.on('new post saved', function (message) {
   console.log("  - new message:", message);
   sendMessage(message);
 });
+
+function toggleModal() {
+  var modalBackdrop = document.getElementById('modal-backdrop');
+  var changeUsernameModal = document.getElementById('change-username-modal');
+  var usernameInputField = document.getElementById('username-input');
+
+  //Clear text
+  usernameInputField.value = "";
+
+  modalBackdrop.classList.toggle('hidden');
+  changeUsernameModal.classList.toggle('hidden');
+}
+
+function checkForEmptyField() {
+  var usernameInputField = document.getElementsById('username-input');
+
+  if (usernameInputField.value === "") {
+    return true;
+  }
+
+  return false;
+}
+
+function changeUsername() {
+  if (checkForEmptyFields()) {
+    alert("Please input what you want your new username to be!");
+  }
+  else {
+    username = document.getElementsById('username-input').value;
+
+    toggleModal();
+  }
+}
+
+var changeUsernameButton = document.getElementById('change-username-button');
+var modalClose = document.getElementById('modal-close');
+var modalCancel = document.getElementById('modal-cancel');
+var modalAccept = document.getElementById('modal-accept');
+changeUsernameButton.addEventListener('click', toggleModal);
+modalClose.addEventListener('click', toggleModal);
+modalCancel.addEventListener('click', toggleModal);
+modalAccept.addEventListener('click', changeUsername);
