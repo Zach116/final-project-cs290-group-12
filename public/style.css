@@ -58,11 +58,16 @@ body {
   height: 50px;
 }
 
-#send-button {
+#send-button,
+#change-username-button {
   width: 60px;
   height: 50px;
   margin-top: 16px;
   margin-left: 4px;
+}
+
+#change-username-button {
+  width:80px;
 }
 
 /*============
