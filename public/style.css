@@ -65,7 +65,9 @@ body {
   margin-left: 4px;
 }
 
-/*MODAL STYLING*/
+/*============
+MODAL STYLING
+=============*/
 #modal-backdrop {
   position: fixed;
   top: 0;

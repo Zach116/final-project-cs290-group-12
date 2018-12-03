@@ -46,6 +46,9 @@ socket.on('new post saved', function (message) {
   sendMessage(message);
 });
 
+//===========
+//MODAL STUFF
+//===========
 function toggleModal() {
   var modalBackdrop = document.getElementById('modal-backdrop');
   var changeUsernameModal = document.getElementById('change-username-modal');
@@ -59,7 +62,7 @@ function toggleModal() {
 }
 
 function checkForEmptyField() {
-  var usernameInputField = document.getElementsById('username-input');
+  var usernameInputField = document.getElementById('username-input');
 
   if (usernameInputField.value === "") {
     return true;
@@ -69,11 +72,11 @@ function checkForEmptyField() {
 }
 
 function changeUsername() {
-  if (checkForEmptyFields()) {
+  if (checkForEmptyField()) {
     alert("Please input what you want your new username to be!");
   }
   else {
-    username = document.getElementsById('username-input').value;
+    username = document.getElementById('username-input').value;
 
     toggleModal();
   }
