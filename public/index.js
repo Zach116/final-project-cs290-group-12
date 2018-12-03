@@ -1,5 +1,5 @@
 var textBox =  document.getElementById("text-input");
-var socket = io.connect("http://localhost");
+var socket = io();
 
 var sendButton = document.getElementById("send-button");
 sendButton.addEventListener('click', function(event) {
@@ -17,7 +17,7 @@ sendButton.addEventListener('click', function(event) {
       if (event.target.status === 200) {
         sendMessage(textBoxContent);
         textBox.value = "";
-        socket.emit('saved message');
+        socket.emit('saved message', textBoxContent);
       } else {
         alert("Error storing message: " + event.target.response);
       }
@@ -41,5 +41,6 @@ function sendMessage(message) {
 
 socket.on('new post saved', function (message) {
   console.log("==Received event from socket that a new post was added");
+  console.log("  - new message:", message);
   sendMessage(message);
 });

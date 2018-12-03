@@ -79,11 +79,16 @@ MongoClient.connect(mongoURL, function(err, client) {
   }
   mongoDB = client.db(mongoDBName);
   //Set the server to listen on the appropriate PORT
+  /*app.listen(port, function () {
+    console.log("==Server listening on port", port);
+  });*/
   server.listen(port);
   console.log("==Server listening on port", port);
 });
 
-io.on('saved message', function (socket) {
-  console.log('client side posted message');
-  socket.broadcast.emit('new post saved', req.body.message);
+io.on('connection', function (socket) {
+  socket.on('saved message', function (message) {
+    console.log('client side posted message');
+    socket.broadcast.emit('new post saved', message);
+  });
 });
