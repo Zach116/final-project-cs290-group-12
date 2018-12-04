@@ -32,6 +32,10 @@ var io = require('socket.io')(server);
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
+//favicon.icon
+var favicon = require('serve-favicon');
+app.use(favicon(__dirname + '/public/favicon.ico'));
+
 //==Handle incoming requests
 app.use(express.static('public'));
 

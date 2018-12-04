@@ -65,6 +65,7 @@ header {
   color: #FCBB6D;
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
+  padding-right: 10px;
   overflow-wrap: break-word;
 }
 
@@ -78,13 +79,16 @@ header {
   width: 95%;
   background-color: #475C7A;
   padding: 10px;
-  margin: 20px;
+  margin: 20px 20px 10px 20px;
 }
 
 #text-input {
-  margin: 13px;
+  margin: 15px;
   width: 75%;
-  height: 25px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ffffff;
+  height: 14px 7px;
 }
 
 #send-button,
@@ -96,13 +100,14 @@ header {
   border: 0;
   width: 5%;
   height: 40px;
-  margin-top: 16px;
-  margin-left: 7px;
+  margin: 14px 7px;
 }
 
 #send-button:hover,
 #change-username-button:hover {
   cursor: pointer;
+  color: #FCBB6D;
+  background-color: #D8737F;
 }
 
 #change-username-button {
@@ -191,8 +196,9 @@ MODAL STYLING
 .username-input-element input {
   flex: 6 200px;
   padding: 8px;
-  font-size: 20px;
-  border: 1px solid #aaa;
+  font-size: 16px;
+  border: 1px solid #ffffff;
+  height: 15px;
 }
 
 .modal-footer {
@@ -204,13 +210,16 @@ MODAL STYLING
 #modal-cancel,
 #modal-accept {
   margin-right: 20px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  color: #475C7A;
+  background-color: #FCBB6D;
+  border: 0;
+  height: 40px;
 }
 
-#modal-cancel {
-  color: #333;
-  background-color: #fff;
-}
-
-#modal-cancel:hover {
-  background-color: #eee;
+#modal-cancel:hover, #modal-accept:hover {
+  cursor: pointer;
+  color: #FCBB6D;
+  background-color: #D8737F;
 }
