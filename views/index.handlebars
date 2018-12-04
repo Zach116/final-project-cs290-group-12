@@ -1,9 +1,11 @@
 <main class="content">
-  <section id="messages">
-    <!--messages-->
-    {{#each messages}}
-      {{> messageBubble}}
-    {{/each}}
+  <section id="display-messages">
+    <div id="messages">
+      <!--messages-->
+        {{#each messages}}
+          {{> messageBubble}}
+        {{/each}}
+    </div>
   </section>
 
   <section id="send-messages">
