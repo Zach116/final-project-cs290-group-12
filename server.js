@@ -49,11 +49,13 @@ app.get('/', function (req, res, next) {
 
 //handle adding posts to db
 app.post('/message/addMessage', function (req, res, next) {
-  console.log("got message request");
-  console.log("req.body:", req.body);
-  if (req.body && req.body.message) {
+  console.log("== got message request");
+  console.log("  - req.body.message:", req.body.message);
+  console.log("  - req.body.username:", req.body.username);
+  if (req.body && req.body.message && req.body.username) {
     var allMessages = mongoDB.collection('messages');
     allMessages.insertOne({
+      username: req.body.username,
       message: req.body.message
     }, function (err, result) {
       if (err) {
@@ -87,8 +89,8 @@ MongoClient.connect(mongoURL, function(err, client) {
 });
 
 io.on('connection', function (socket) {
-  socket.on('saved message', function (message) {
+  socket.on('saved message', function (message, user) {
     console.log('client side posted message');
-    socket.broadcast.emit('new post saved', message);
+    socket.broadcast.emit('new post saved', message, user);
   });
 });

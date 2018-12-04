@@ -11,14 +11,15 @@ sendButton.addEventListener('click', function(event) {
     postRequest.open('POST', requestURL);
 
     var requestBody = JSON.stringify({
+      username: username,
       message: textBoxContent
     });
 
     postRequest.addEventListener('load', function (event) {
       if (event.target.status === 200) {
-        sendMessage(textBoxContent);
+        sendMessage(textBoxContent, username);
         textBox.value = "";
-        socket.emit('saved message', textBoxContent);
+        socket.emit('saved message', textBoxContent, username);
       } else {
         alert("Error storing message: " + event.target.response);
       }
@@ -29,9 +30,9 @@ sendButton.addEventListener('click', function(event) {
   }
 });
 
-function sendMessage(message) {
+function sendMessage(message, user) {
   var messageContext = {
-    "username": username,
+    "username": user,
     "message": message
   }
 
@@ -41,10 +42,11 @@ function sendMessage(message) {
   messageContainer.insertAdjacentHTML('beforeend', messageHTML);
 }
 
-socket.on('new post saved', function (message) {
+socket.on('new post saved', function (message, user) {
   console.log("==Received event from socket that a new post was added");
   console.log("  - new message:", message);
-  sendMessage(message);
+  console.log("  - username:", user);
+  sendMessage(message, user);
 });
 
 //===========
