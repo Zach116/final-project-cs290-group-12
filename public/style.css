@@ -7,12 +7,12 @@ blue-black: #475C7A */
 
 header {
    display: flex;
-   background-color: #FCBB6D;
+   background-color: #685D79;
    height: 17vh;
  }
 
  body {
-   background-color: #475C7A;
+   background-color: #AB6C82;
    height: 75vh;
    margin: 0;
  }
@@ -21,7 +21,7 @@ header {
    font-family: 'Montserrat', sans-serif;
    font-size: 60px;
    font-weight: bold;
-   color: #D8737F;
+   color: #FCBB6D;
    text-decoration: none;
 }
 
@@ -46,18 +46,22 @@ header {
   background-color: #685D79;
   padding: 15px;
   overflow: auto;
+  margin: 10px 20px 20px 20px;
 }
 
 .messageBubble {
-    margin-top: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    background-color: #AB6C82;
+    margin: 10px 5px;
+    background-color: #475C7A;
     padding: 5px 0 5px 10px;
 }
 
-#text {
+#username-text {
+  color: #D8737F;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#message-text {
   color: #FCBB6D;
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
@@ -69,7 +73,12 @@ header {
   width: 100%;
 }
 
-.text-input-container{
+.text-input-container {
+  height: 95%;
+  width: 95%;
+  background-color: #475C7A;
+  padding: 10px;
+  margin: 20px;
 }
 
 #text-input {
@@ -85,10 +94,19 @@ header {
   color: #475C7A;
   background-color: #FCBB6D;
   border: 0;
-  width: 7%;
+  width: 5%;
   height: 40px;
   margin-top: 16px;
-  margin-left: 4px;
+  margin-left: 7px;
+}
+
+#send-button:hover,
+#change-username-button:hover {
+  cursor: pointer;
+}
+
+#change-username-button {
+  width: 12%;
 }
 
 /*============
@@ -101,7 +119,7 @@ MODAL STYLING
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 #change-username-modal {
@@ -124,13 +142,15 @@ MODAL STYLING
   min-width: 350px;
   min-height: 300px;
   margin: 40px auto;
-  background-color: #fff;
+  background-color: #475c7a;
   border-radius: 15px;
 }
 
 .modal-header {
   position: relative;
-  padding: 10px 20px;
+  padding: 20px;
+  font-family: Montserrat;
+  color: #fcbb6d;
 }
 
 .modal-header h3 {
@@ -161,6 +181,8 @@ MODAL STYLING
 }
 
 .username-input-element > label {
+  font-family: 'Montserrat', sans-serif;
+  color: #fcbb6d;
   font-weight: 600;
   flex: 1 75px;
   margin-right: 10px;
