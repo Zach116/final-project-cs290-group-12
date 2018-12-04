@@ -14,6 +14,7 @@ header {
  body {
    background-color: #475C7A;
    height: 75vh;
+   margin: 0;
  }
 
  .site-title a{
@@ -29,54 +30,65 @@ header {
   margin-left: 18px;
 }
 
-body {
-  margin: 0;
-}
-
 .content {
   height: 100%;
   width: 100%;
 }
 
-#messages {
+#display-messages{
   height: 85%;
-  padding: 20px 0 10px 0;
+  width: 100%;
 }
 
-.message-container {
+#messages {
+  height: 95%;
+  width: 95%;
   background-color: #685D79;
-  height: 100%;
-  width: 100%;
+  padding: 15px;
+  overflow: auto;
+}
+
+.messageBubble {
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    background-color: #AB6C82;
+    padding: 5px 0 5px 10px;
+}
+
+#text {
+  color: #FCBB6D;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  overflow-wrap: break-word;
 }
 
 #send-messages {
   height: 15%;
-  padding: 10px 0 20px 0;
+  width: 100%;
 }
 
 .text-input-container{
-  display: inline-flex;
-  background-color: #685D79;
-  height: 100%;
-  width: 100%;
 }
 
 #text-input {
   margin: 13px;
-  width: 85%;
+  width: 75%;
   height: 25px;
 }
 
 #send-button,
 #change-username-button {
-  width: 60px;
-  height: 25px;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  color: #475C7A;
+  background-color: #FCBB6D;
+  border: 0;
+  width: 7%;
+  height: 40px;
   margin-top: 16px;
   margin-left: 4px;
-}
-
-#change-username-button {
-  width:80px;
 }
 
 /*============
