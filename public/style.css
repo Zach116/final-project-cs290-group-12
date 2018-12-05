@@ -75,6 +75,7 @@ header {
 }
 
 .text-input-container {
+  display: flex;
   height: 95%;
   width: 95%;
   background-color: #475C7A;
