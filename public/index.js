@@ -3,7 +3,7 @@ var socket = io();
 var username = "Guest";
 
 var sendButton = document.getElementById("send-button");
-sendButton.addEventListener('click', function(event) {
+sendButton.addEventListener('click', function (event) {
   var textBoxContent = textBox.value;
   if (textBoxContent !== "") {
     var postRequest = new XMLHttpRequest();
@@ -27,6 +27,12 @@ sendButton.addEventListener('click', function(event) {
 
     postRequest.setRequestHeader('Content-Type', 'application/json');
     postRequest.send(requestBody);
+  }
+});
+
+textBox.addEventListener('keyup', function (event) {
+  if (event.keyCode === 13) {
+    sendButton.click();
   }
 });
 
@@ -64,9 +70,9 @@ function toggleModal() {
   changeUsernameModal.classList.toggle('hidden');
 }
 
-function checkForEmptyField() {
-  var usernameInputField = document.getElementById('username-input');
+var usernameInputField = document.getElementById('username-input');
 
+function checkForEmptyField() {
   if (usernameInputField.value === "") {
     return true;
   }
@@ -93,3 +99,8 @@ changeUsernameButton.addEventListener('click', toggleModal);
 modalClose.addEventListener('click', toggleModal);
 modalCancel.addEventListener('click', toggleModal);
 modalAccept.addEventListener('click', changeUsername);
+usernameInputField.addEventListener('keyup', function (e) {
+  if (e.keyCode === 13) {
+    modalAccept.click();
+  }
+});
